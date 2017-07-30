@@ -40,17 +40,19 @@ def home():
 @app.route('/colorize', methods = ['POST'])
 def colorize():
     content = request.json
-    encoded_img = content["encoded_img"] # the base64 of the img
-    decoded_img = base64.b64decode(encoded_img)
+    grey_encoded = content["grey_image"] # the base64 of the img
+    color_encoded = content["color_image"] # the base64 of the img
+    grey = base64.b64decode(grey_encoded)
+    color = base64.b64decode(color_encoded)
     img_id = str(uuid.uuid4())
     # save the image
     sketch = open("./images/line/" + img_id + ".png", 'wb')
-    sketch.write(decoded_img)
+    sketch.write(grey)
     sketch.close()
     # save the ref
-    # ref = open("./images/ref/" + img_id + ".png", 'wb')
-    # fout1.write(decoded_img)
-    # fout1.close()
+    ref = open("./images/ref/" + img_id + ".png", 'wb')
+    ref.write(color)
+    ref.close()
 
     painter.colorize(img_id)
 
