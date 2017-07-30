@@ -83,9 +83,9 @@ class Painter:
             with chainer.using_config('train', False):
                 y = lnn.calc(Variable(x))
 
-        self.save_as_img(y.data[0], self.root + "line/" + id_str + ".jpg")
+        self.save_as_img(y.data[0], self.root + "line/" + id_str + ".png")
 
-    def colorize(self, id_str, step='C', blur=0, s_size=128,colorize_format="jpg"):
+    def colorize(self, id_str, step='C', blur=0, s_size=128,colorize_format="png"):
         if self.gpu >= 0:
             cuda.get_device(self.gpu).use()
 
@@ -120,8 +120,8 @@ class Painter:
 
             for channel in range(3):
                 input_bat[0, 1 + channel, :] = cv2.resize(
-                    output[channel, :], 
-                    (sample[1].shape[2], sample[1].shape[1]), 
+                    output[channel, :],
+                    (sample[1].shape[2], sample[1].shape[1]),
                     interpolation=cv2.INTER_CUBIC)
 
             if self.gpu >= 0:
@@ -134,8 +134,8 @@ class Painter:
             del link  # release memory
 
         image_out_path = {
-            'S': self.outdir_min + id_str + ".png", 
-            'L': self.outdir + id_str + ".jpg", 
+            'S': self.outdir_min + id_str + ".png",
+            'L': self.outdir + id_str + ".png",
             'C': self.outdir + id_str + "_0." + colorize_format}
         self.save_as_img(image_conv2d_layer.data[0], image_out_path[step])
         del image_conv2d_layer
