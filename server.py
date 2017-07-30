@@ -141,7 +141,7 @@ class MyHandler(http.server.CGIHTTPRequestHandler):
         self.wfile.write(content)
         self.log_t()
 
-# set args 
+# set args
 
 parser = argparse.ArgumentParser(
     description='chainer line drawing colorization server')
