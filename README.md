@@ -1,12 +1,4 @@
-# Paints Chainer
-Paints Chainer is a line drawing colorizer using chainer.
-Using CNN, you can colorize your sketch semi-automatically .
-
-![image](https://github.com/pfnet/PaintsChainer/blob/open/sample.png)
-
-## DEMO
-http://paintschainer.preferred.tech/
-
+# Pretty Whale
 
 ## Requirement
 If not specified, versions are assumed to be recent LTS version.
@@ -18,11 +10,6 @@ If not specified, versions are assumed to be recent LTS version.
 - openCV "cv2" (Python 3 support possible, see installation guide)
 - Chainer 2.0.0 or later
 - CUDA / cuDNN (If you use GPU)
-
-## Installation Guide
-check wiki page
-https://github.com/pfnet/PaintsChainer/wiki/Installation-Guide
-
 
 ## Starting web host
 UI is html based. using wPaint.js
@@ -46,21 +33,5 @@ Source code : MIT License
 
 Pre-trained Model : All Rights Reserved
 
-## Pre-Trained Models
-Download following model files to  cgi-bin/paint_x2_unet/models/
-
-http://paintschainer.preferred.tech/downloads/
-
-(Copyright 2017 Taizan Yonetsuji All Rights Reserved.)
-
-## Developer Community
-Feel free to request an invitation!
-
-https://paintschainerdev.slack.com/
-
 ## Acknowledgements
-This project is powered by Preferred Networks.
-
-Thanks a lot for rezoolab, mattya, okuta, ofk . This project could not be achived without their great support.
-
-Line drawing of top image is by ioiori18.
+mmm
