@@ -21,21 +21,21 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     return jsonify({
-        name: "pretty-whale",
-        status: "good"
+        "name": "pretty-whale",
+        "status": "good"
     })
 
 
 @app.route('/img')
 def img():
     return jsonify({
-        todo: "todo"
+        "todo": "todo"
     })
 
 @app.route('/ref')
 def ref():
     return jsonify({
-        todo: "todo"
+        "todo": "todo"
     })
 
 @app.errorhandler(404)
@@ -48,4 +48,4 @@ def not_found_error(error):
 # Launch.
 #----------------------------------------------------------------------------#
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)
+    app.run(host='0.0.0.0', port=5000)
